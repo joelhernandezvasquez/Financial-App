@@ -5,6 +5,32 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+   /* colors */
+
+   --beige_500:#98908B;
+   --beige_100:#F8F4F0;
+
+   --grey_900:#201F24;
+   --grey_500:#696868;
+   --grey_100:#F2F2F2;
+
+   --green_clr:#277C78;
+   --yellow_clr:#F2CDAC;
+   --cyan_clr:#82C9D7;
+   --navy_clr:#626070;
+   --red_clr:#C94736;
+   --violet_clr:#826CB0;
+   --purple_clr:#AF81BA;
+   --turquoise_clr:#597C7C;
+   --brown_clr:#93674F;
+   --magenta_clr:#934F6F;
+   --blue_clr:#3F82B2;
+   --navy_grey_clr:#97A0AC;
+   --army_green_clr:#7F9161;
+   --gold_clr:#CAB361;
+   --orange_clr:#BE6C49;
+   --white_clr:#FFFFFF;
 }
 
 @media (prefers-color-scheme: dark) {
