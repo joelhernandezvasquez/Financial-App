@@ -31,6 +31,18 @@
    --gold_clr:#CAB361;
    --orange_clr:#BE6C49;
    --white_clr:#FFFFFF;
+
+
+   /* spacing */
+
+   --spacing_50:.25rem;
+   --spacing_100:.5rem;
+   --spacing_150:.75rem;
+   --spacing_200:1rem;
+   --spacing_250:1.25rem;
+   --spacing_300:1.5rem;
+   --spacing_400:2rem;
+   --spacing_500:2.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
