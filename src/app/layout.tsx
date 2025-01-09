@@ -15,11 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${public_sans.className} antialiased`}
-      >
-        <SideNav/>
+      <body className={`${public_sans.className} antialiased`}>  
         {children}
+        <SideNav/> 
       </body>
     </html>
   );

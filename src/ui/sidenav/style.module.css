@@ -3,3 +3,9 @@
  border-radius: 8px 8px 0px 0px;
  padding: var(--spacing-100, 8px) var(--spacing-200, 16px) 0px var(--spacing-200, 16px);
 }
+
+@media(min-width:767px){
+    .sidenav{
+        padding: var(--spacing-100, 8px) var(--spacing-500, 40px) 0px var(--spacing-500, 40px);
+    }
+}
