@@ -9,3 +9,28 @@
         padding: var(--spacing-100, 8px) var(--spacing-500, 40px) 0px var(--spacing-500, 40px);
     }
 }
+
+@media(min-width:1200px){
+    .sidenav{
+      display:flex;
+      flex-direction: column;
+      max-width:300px;
+      height:100vh;
+      padding:0;
+      padding-bottom: var(--spacing_300);
+      border-radius: 0px var(--spacing-200, 16px) var(--spacing-200, 16px) 0px;
+      gap:var(--spacing_300);
+    }
+
+    .minimize_menu_btn{
+      width: 100%;
+      display:flex;
+      align-items: center;
+      gap:1rem;
+      color:var(--grey_300);
+      font-weight: 700;
+      padding: var(--spacing-200, 16px) var(--spacing-400, 32px);
+      cursor: pointer;
+      margin-top: auto;
+    }
+}
