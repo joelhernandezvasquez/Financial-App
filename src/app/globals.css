@@ -74,6 +74,10 @@ html, body {
 }
 
 body {
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  padding-bottom:.85rem;
   line-height: 1.5;
   background: var(--background);
 }
@@ -117,3 +121,9 @@ a{
   text-decoration: none;
   color:inherit;
 }
+
+.content_container{
+  padding:var(--spacing_300) var(--spacing_200);
+}
+
+

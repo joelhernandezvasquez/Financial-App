@@ -1,5 +1,9 @@
+import { ContentTitle } from "@/ui/content-title/ContentTitle";
+
 export default function Transactions(){
     return(
-        <h1>Transactions</h1>
+      <main>
+        <ContentTitle title="transactions"/>
+      </main>
     )
     }

@@ -1,5 +1,9 @@
+import { ContentTitle } from "@/ui/content-title/ContentTitle";
+
 export default function Pots(){
     return(
-        <h1>Pots</h1>
+       <main>
+         <ContentTitle title="pots"/>
+      </main>
     )
     }

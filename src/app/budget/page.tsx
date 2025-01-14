@@ -1,5 +1,11 @@
+import { ContentTitle } from "@/ui/content-title/ContentTitle";
+
 export default function Budget(){
     return(
-        <h1>Budget</h1>
-    )
+           <main>
+                   <ContentTitle title="budget"/>
+             </main>
+           
+           )
+    
     }
