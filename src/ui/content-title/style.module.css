@@ -1,0 +1,7 @@
+
+.content_title{
+    font-size: 2rem;
+    text-transform: capitalize;
+    color:var(--grey_900);
+    font-weight: 700;
+}

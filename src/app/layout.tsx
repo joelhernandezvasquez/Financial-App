@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { public_sans } from "@/config/fonts";
-import "./globals.css";
 import { SideNav } from "@/ui/sidenav/SideNav";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${public_sans.className} antialiased`}>  
-        {children}
+        <section className={'content_container'}>
+          {children}
+        </section>
+      
         <SideNav/> 
       </body>
     </html>

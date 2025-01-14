@@ -74,6 +74,10 @@ html, body {
 }
 
 body {
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  /* padding-bottom:.85rem; */
   line-height: 1.5;
   background: var(--background);
 }
@@ -117,3 +121,27 @@ a{
   text-decoration: none;
   color:inherit;
 }
+
+.content_container{
+  padding:var(--spacing_300) var(--spacing_200);
+}
+
+@media(min-width:767px){
+  .content_container{
+    padding:var(--spacing_400) var(--spacing_500);
+  }
+}
+
+@media(min-width:1200px){
+  body{
+    grid-template-columns: 300px 1fr;
+  }
+  
+  .content_container{
+    grid-column: 2/3;
+    grid-row:1/3;
+  }
+
+}
+
+

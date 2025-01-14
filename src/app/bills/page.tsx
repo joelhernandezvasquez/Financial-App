@@ -1,5 +1,10 @@
+import { ContentTitle } from "@/ui/content-title/ContentTitle";
+
 export default function Bills(){
     return(
-        <h1>Bills</h1>
+      <main>
+            <ContentTitle title="recurring bills"/>
+      </main>
+    
     )
     }

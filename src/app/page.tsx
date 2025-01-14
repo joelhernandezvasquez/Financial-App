@@ -1,8 +1,9 @@
+import { ContentTitle } from "@/ui/content-title/ContentTitle";
 
 export default function Home() {
   return (
       <main>
-      <h1> Overview</h1>
+        <ContentTitle title="overview"/>
      </main>
 
   );
