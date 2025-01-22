@@ -25,3 +25,10 @@
 .balance_slot:first-child > *{
    color:var(--white_clr);
 }
+
+@media(min-width:767px){
+  .balance_slot{
+    padding:var(--spacing_300);
+    flex:1;
+  }
+}

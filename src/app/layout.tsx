@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { public_sans } from "@/config/fonts";
-import { SideNav } from "@/ui/sidenav/SideNav";
+import { SideNav } from "@/app/ui/sidenav/SideNav";
 import "./globals.css";
 
 export const metadata: Metadata = {

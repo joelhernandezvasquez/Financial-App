@@ -1,4 +1,4 @@
-import { ContentTitle } from "@/ui/content-title/ContentTitle";
+import { ContentTitle } from "@/app/ui/content-title/ContentTitle";
 
 export default function Transactions(){
     return(

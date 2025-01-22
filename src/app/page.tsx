@@ -1,11 +1,15 @@
-import { ContentTitle } from "@/ui/content-title/ContentTitle";
-import { BalanceSumary } from "@/ui/overview/balance-summary/BalanceSumary";
+import { Suspense } from "react";
+import { ContentTitle } from "@/app/ui/content-title/ContentTitle";
+import { BalanceSumary } from "@/app/ui/overview/balance-summary/BalanceSumary";
 
 export default function Home() {
   return (
       <main>
         <ContentTitle title="overview"/>
-        <BalanceSumary/>
+        {/* TODO:Need to have a suspense boundary along with a loading file with the skeleton */}
+        <Suspense fallback={'Loading...'}>
+           <BalanceSumary/>
+        </Suspense>
      </main>
 
   );
