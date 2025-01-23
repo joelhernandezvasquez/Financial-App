@@ -1,0 +1,34 @@
+
+.balance_slot{
+    display:flex;
+    flex-direction: column;
+    gap:12px;
+    padding:var(--spacing_250);
+    background:var(--white_clr);
+    border-radius: var(--spacing_150);
+}
+
+.balance_slot_title{
+ color:var(--grey_500);
+ font-size:.875rem;
+ font-weight: 400;
+}
+.balance_slot_amount{
+    color:var(--grey_900);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.balance_slot:first-child{
+  background:var(--grey_900);
+}
+.balance_slot:first-child > *{
+   color:var(--white_clr);
+}
+
+@media(min-width:767px){
+  .balance_slot{
+    padding:var(--spacing_300);
+    flex:1;
+  }
+}

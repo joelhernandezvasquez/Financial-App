@@ -45,6 +45,10 @@
    --spacing_300:1.5rem;
    --spacing_400:2rem;
    --spacing_500:2.5rem;
+
+   /* Screen Size */
+   --tablet_view:767px;
+   --desktop_view:1200px
 }
 
 @media (prefers-color-scheme: dark) {
@@ -141,7 +145,6 @@ a{
     grid-column: 2/3;
     grid-row:1/3;
   }
-
 }
 
 

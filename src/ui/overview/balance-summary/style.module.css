@@ -1,0 +1,18 @@
+
+
+.balance_container{
+    padding:var(--spacing_400) 0;
+}
+
+.balance_content{
+    display:flex;
+    flex-direction: column;
+    gap:var(--spacing_150);
+}
+
+@media(min-width:767px){
+    .balance_content{
+        flex-direction: row;
+        gap:24px;
+    }
+}
