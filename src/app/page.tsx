@@ -1,6 +1,6 @@
 import { Suspense } from "react";
-import { ContentTitle } from "@/app/ui/content-title/ContentTitle";
-import { BalanceSumary } from "@/app/ui/overview/balance-summary/BalanceSumary";
+import { ContentTitle } from "@/ui/content-title/ContentTitle";
+import { BalanceSumary } from "@/ui/overview/balance-summary/BalanceSumary";
 
 export default function Home() {
   return (

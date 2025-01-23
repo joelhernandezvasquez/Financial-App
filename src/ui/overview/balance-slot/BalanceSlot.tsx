@@ -1,4 +1,4 @@
-import { formatCurrency } from '@/app/lib/utils';
+import { formatCurrency } from '@/lib/utils';
 import style from './style.module.css';
 
 interface Props{

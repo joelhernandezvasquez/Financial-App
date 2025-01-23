@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from 'next/image';
 import { usePathname } from "next/navigation";
-import { navigationLinks } from "@/app/lib/constants";
+import { navigationLinks } from "@/lib/constants";
 import style from './style.module.css';
 
 const NavLinks = () => {

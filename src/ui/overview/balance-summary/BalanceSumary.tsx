@@ -1,4 +1,4 @@
-import { fetchBalanceSummary } from '@/app/lib/actions';
+import { fetchBalanceSummary } from '@/lib/actions';
 import { BalanceSlot } from '../balance-slot/BalanceSlot';
 import style from './style.module.css';
 
