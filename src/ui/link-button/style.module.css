@@ -1,0 +1,8 @@
+
+.link{
+    display:flex;
+    gap:12px;
+    color:var(--grey_500);
+    font-size: .875rem;
+    font-weight: 400;
+}

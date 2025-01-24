@@ -1,0 +1,18 @@
+
+.pots_container{
+ background:var(--white_clr);
+ border-radius: 12px;
+ padding:var(--spacing_300) var(--spacing_250);
+}
+
+.pots_header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.total_save_box{
+    background:var(--beige_100);
+    margin:var(--spacing_250) 0;
+    padding:var(--spacing_200);
+}
