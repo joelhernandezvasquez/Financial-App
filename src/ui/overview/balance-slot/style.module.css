@@ -13,11 +13,6 @@
  font-size:.875rem;
  font-weight: 400;
 }
-.balance_slot_amount{
-    color:var(--grey_900);
-    font-size: 2rem;
-    font-weight: 700;
-}
 
 .balance_slot:first-child{
   background:var(--grey_900);

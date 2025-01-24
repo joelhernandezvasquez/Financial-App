@@ -1,0 +1,5 @@
+.balance_amount{
+    color:var(--grey_900);
+    font-size: 2rem;
+    font-weight: 700;
+}
