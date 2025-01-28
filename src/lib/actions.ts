@@ -1,4 +1,4 @@
-import { Balance } from "./definitions";
+import { Balance, Pots } from "./definitions";
 
 const {HOST} = process.env;
 
@@ -17,5 +17,25 @@ export const fetchBalanceSummary = async ():Promise<Balance> =>{
     }
      else console.log(error);
    return {} as Balance;
+  }
+}
+
+export const getPots = async():Promise<Pots[]> =>{
+  try{
+   const request = await fetch(`${HOST}/pots`);
+    if(!request.ok){
+      console.log(request);
+      throw Error(`Something went wrong while getting the pots`);
+    }
+
+    const response = await request.json();
+    return response;
+  }
+  catch(error){
+    if(error instanceof Error){
+      throw Error(error.message);
+    }
+     else console.log(error);
+    return [];
   }
 }
