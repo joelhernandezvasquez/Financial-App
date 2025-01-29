@@ -1,5 +1,7 @@
 
 .pots_container{
+ display:grid;
+ grid-template-columns: 1fr;
  background:var(--white_clr);
  border-radius: 12px;
  padding:var(--spacing_300) var(--spacing_250);
@@ -31,4 +33,23 @@
     display:grid;
     grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
     gap:1rem;
+}
+
+
+@media(min-width:767px){
+    .pots_container{
+       grid-template-columns: repeat(2,1fr);
+       gap:20px;
+       padding:var(--spacing_400);
+    }
+
+    .pots_header{
+        grid-column: 1/-1;
+    }
+    .total_save_box{
+        margin:0;
+        max-width: 280px;
+    }
+    
+    
 }
