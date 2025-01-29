@@ -1,8 +1,9 @@
 import Image from 'next/image';
+import { getPots } from '@/lib/actions';
 import SubTitle from '@/ui/sub-title/SubTitle';
 import LinkButton from '@/ui/link-button/LinkButton';
 import AmountText from '@/ui/amount-text/AmountText';
-import { getPots } from '@/lib/actions';
+import PotsCategory from './pots-category/PotsCategory';
 import style from './style.module.css';
 
 const PotsSummary = async() => {
@@ -32,14 +33,7 @@ const PotsSummary = async() => {
       <div className={style.summary_pots_category_container}>
         <ul className={style.summary_pots_category}>
           {getAllPots.map((pot)=>{
-                    // TODO: Convert the li to a component
-            return <li key={pot.name} className={style.summary_pots_category_item}>
-                     <div style={{backgroundColor:pot.theme}} className={style.category_theme}></div>
-                     <div className={style.category_content}>
-                        <p className={style.category_content_text}>{pot.name}</p>
-                         <p className={style.category_content_amount}>${pot.total}</p>
-                     </div>
-                   </li>
+            return <PotsCategory key={pot.id} pot={pot}/>
           })}
         </ul>
       </div>
@@ -47,5 +41,4 @@ const PotsSummary = async() => {
     </section>
   )
 }
-
 export default PotsSummary

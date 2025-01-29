@@ -32,31 +32,3 @@
     grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
     gap:1rem;
 }
-
-.summary_pots_category_item{
-    display:flex;
-    align-items: center;
-    gap:1rem;
-}
-
-.category_theme{
-    width: 4px;
-    min-height: 43px;
-    border-radius: .5rem;
-}
-
-.category_content{
-    display:flex;
-    flex-direction: column;
-    gap:4px;
-}
-.category_content_text{
-    color:var(--grey_500);
-    font-size: 12px;
-    font-weight: 400;
-}
-.category_content_amount{
- color:var(--grey_900);
- font-size: .875rem;
- font-weight: 700;
-}
