@@ -12,3 +12,13 @@ export interface Pots {
   total: number,
   theme: string
 }
+
+export interface Transaction{
+  id: number,
+  avatar: string,
+  name:string,
+  category: string,
+  date: string,
+  amount: number,
+  recurring: boolean
+}
