@@ -1,28 +1,25 @@
 import { Transaction } from "@/lib/definitions"
+import Avatar from "@/ui/avatar/Avatar";
+import TransactionAmount from "@/ui/transaction-amount/TransactionAmount";
+import { formatDate } from "@/lib/utils";
 import style from './style.module.css';
-import Image from "next/image";
-
 interface Props{
     transaction:Transaction
 }
 const TransactionSummaryItem = ({transaction}:Props) => {
    const {avatar,name,amount,date} = transaction;
-   console.log(avatar)
+   const dateFormat = formatDate(date);
+   
   return (
     <li className={style.transaction_item}>
         <div className={style.transaction_item_info}>
-          <Image
-           width={32}
-           height={32}
-           src={`/${avatar}`}
-           alt=""
-          />
-          <h2>{name}</h2>
+          <Avatar imageUrl={avatar}/>
+          <h2 className={style.transaction_item_info_name}>{name}</h2>
         </div>
 
-        <div className={style.transaction_item_info}>
-          <p>{amount}</p>
-          <p>{date}</p>
+        <div className={style.transaction_item_amount_date}>
+          <TransactionAmount amount={amount}/>
+          <p className={style.transaction_date}>{dateFormat}</p>
         </div>
     </li>
   )

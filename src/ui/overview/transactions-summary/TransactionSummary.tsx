@@ -7,7 +7,6 @@ import style from './style.module.css';
 
 const TransactionSummary = async() => {
   const transactions = filterTransactions(await fetchTransactions(),5);
-  console.log(transactions);
 
   return (
     <section className={style.transaction_container}>
