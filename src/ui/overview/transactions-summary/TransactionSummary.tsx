@@ -1,10 +1,12 @@
-import SubTitle from '@/ui/sub-title/SubTitle';
-import style from './style.module.css';
-import LinkButton from '@/ui/link-button/LinkButton';
 import { fetchTransactions } from '@/lib/actions';
+import { filterTransactions } from '@/lib/utils';
+import SubTitle from '@/ui/sub-title/SubTitle';
+import LinkButton from '@/ui/link-button/LinkButton';
+import TransactionSummaryItem from './transaction-item/TransactionSummaryItem';
+import style from './style.module.css';
 
 const TransactionSummary = async() => {
-  const transactions = await fetchTransactions();
+  const transactions = filterTransactions(await fetchTransactions(),5);
   console.log(transactions);
 
   return (
@@ -14,6 +16,12 @@ const TransactionSummary = async() => {
         <LinkButton url={'/transactions'} text='View All'/>
      </header>
      
+     <ul className={style.transaction_items_container}>
+        {transactions.map((transaction)=>{
+          return <TransactionSummaryItem key={transaction.id} transaction={transaction}/>
+        })}
+     </ul>
+
     </section>
   )
 }
