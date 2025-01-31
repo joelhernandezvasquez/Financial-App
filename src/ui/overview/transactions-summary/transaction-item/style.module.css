@@ -1,0 +1,40 @@
+.transaction_item{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing_250) 0;
+    border-bottom: 1px solid var(--grey_100);
+}
+
+.transaction_item_info{
+    display:flex;
+    align-items: center;
+    gap:1rem;
+}
+
+.transaction_item_amount_date{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap:.3rem;
+}
+
+.transaction_item_info_name{
+    color:var(--grey_900);
+    font-weight: 700;
+    font-size: .875rem;
+}
+
+.transaction_date{
+    font-size: .75rem;
+    font-weight: 400;
+    color:var(--grey_500);
+}
+
+.transaction_item:first-child{
+    padding-top:0;
+}
+
+.transaction_item:last-child{
+    padding-bottom: 0;
+}

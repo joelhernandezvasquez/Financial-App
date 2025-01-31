@@ -1,6 +1,23 @@
+import { Transaction } from "./definitions";
+
 export const formatCurrency = (value: number): string => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
     }).format(value);
   };
+
+
+  export const filterTransactions = (transactions:Transaction[],quantity:number) =>{
+    return transactions.slice(0,quantity);
+  }
+
+  export const isAPositiveNumber = (amount:number) =>{
+    return amount > 0;
+  }
+
+  export const formatDate = (date:string) =>{
+    const formattedDate = new Date(date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });;
+  
+    return formattedDate;
+  }
