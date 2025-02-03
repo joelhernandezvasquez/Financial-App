@@ -22,3 +22,10 @@ export interface Transaction{
   amount: number,
   recurring: boolean
 }
+
+export interface Budget{
+  id:number,
+  category: string,
+  maximum: number,
+  theme: string
+}
