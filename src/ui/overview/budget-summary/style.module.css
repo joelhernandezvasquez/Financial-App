@@ -12,14 +12,26 @@
 .budget_content{
     display:grid;
     grid-template-columns: 1fr;
+    padding-top:var(--spacing_250);
 }
 
 .image_chart{
-    margin:var(--spacing_250) auto;
+    margin:var(--spacing_250) auto ;
 }
 
 .summary_budget_category{
     display:grid;
     grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
     gap:1rem;
+}
+
+@media(min-width:767px){
+    .budget_content{
+        grid-template-columns: 1.3fr auto;
+        align-items: center;
+    }
+
+.image_chart{
+    margin:0 auto ;
+}
 }
