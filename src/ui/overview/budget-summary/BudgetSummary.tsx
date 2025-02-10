@@ -1,8 +1,8 @@
 import SubTitle from '@/ui/sub-title/SubTitle';
 import LinkButton from '@/ui/link-button/LinkButton';
-import Image from 'next/image';
 import PotsCategory from '../pots-summary/pots-category/PotsCategory';
 import { getBudgets } from '@/lib/actions';
+import { BudgetChart } from '@/ui/pie-chart/BudgetChart';
 import style from './style.module.css';
 
 export const BudgetSummary = async () => {
@@ -16,13 +16,7 @@ export const BudgetSummary = async () => {
      </header>
 
      <div className={style.budget_content}>
-      <Image
-       className={style.image_chart}
-       width={240}
-       height={240}
-       src={'/assets/Chart.svg'}
-       alt=''
-      />
+      <BudgetChart/>
        
        <div className={style.summary_budget_category_container}>
         <ul className={style.summary_budget_category}>

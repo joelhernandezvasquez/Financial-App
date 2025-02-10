@@ -12,7 +12,6 @@
 .budget_content{
     display:grid;
     grid-template-columns: 1fr;
-    padding-top:var(--spacing_250);
 }
 
 .image_chart{
