@@ -1,4 +1,4 @@
-import { Balance, Pots, Transaction } from "./definitions";
+import { Balance, Budget, Pots, Transaction } from "./definitions";
 
 const {HOST} = process.env;
 
@@ -46,7 +46,7 @@ export const fetchTransactions = async():Promise<Transaction[]>=>{
 
      if(!request.ok){
         console.log(request);
-        throw Error('Something went wrong while fetching transactions')
+        throw Error('Something went wrong while fetching transactions');
      }
      const response = await request.json();
      return response;
@@ -58,4 +58,26 @@ export const fetchTransactions = async():Promise<Transaction[]>=>{
      else console.log(error);
     return [];
    }
+}
+
+export const getBudgets = async():Promise<Budget[]> =>{
+  try{
+    const request = await fetch(`${HOST}/budget`);
+
+    if(!request.ok){
+      throw Error('Something went wrong while fetching budgets');
+    }
+
+     return await request.json();
+ 
+  }
+  catch(error){
+    if(error instanceof Error){
+      throw Error(error.message)
+    }
+    else{
+      console.log(error)
+    }
+    return []
+  }
 }

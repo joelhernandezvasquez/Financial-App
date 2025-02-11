@@ -3,6 +3,7 @@ import { ContentTitle } from "@/ui/content-title/ContentTitle";
 import { BalanceSumary } from "@/ui/overview/balance-summary/BalanceSumary";
 import PotsSummary from "@/ui/overview/pots-summary/PotsSummary";
 import TransactionSummary from "@/ui/overview/transactions-summary/TransactionSummary";
+import { BudgetSummary } from "@/ui/overview/budget-summary/BudgetSummary";
 
 export default function Home() {
   return (
@@ -21,6 +22,9 @@ export default function Home() {
           <TransactionSummary/>
         </Suspense>
 
+        <Suspense fallback={'Loading...'}>
+          <BudgetSummary/>
+        </Suspense>
 
      </main>
 
