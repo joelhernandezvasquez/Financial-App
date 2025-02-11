@@ -1,4 +1,4 @@
-import { Transaction } from "./definitions";
+import { Budget, BudgetPieData, Transaction } from "./definitions";
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
@@ -27,3 +27,13 @@ export const formatCurrency = (value: number): string => {
   
     return formattedDate;
   }
+
+  export const mappedChartData = (budgets:Budget[]):BudgetPieData[] => {
+    return budgets.map((budget)=>{
+      return{
+        financial:budget.category,
+        count:budget.maximum,
+        fill:budget.theme
+      }
+  })
+}

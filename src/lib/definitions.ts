@@ -29,3 +29,9 @@ export interface Budget{
   maximum: number,
   theme: string
 }
+
+export interface BudgetPieData{
+  financial:string,
+  count:number,
+  fill:string
+}

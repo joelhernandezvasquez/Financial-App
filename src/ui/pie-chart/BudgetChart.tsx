@@ -1,56 +1,44 @@
 "use client";
 
 import * as React from "react";
-import style from './style.module.css';
 import { Label, Pie, PieChart } from "recharts";
+import { Card,CardContent} from "@/components/ui/card";
+import { ChartConfig,ChartContainer, ChartTooltip,ChartTooltipContent} from "@/components/ui/chart"
+import { BudgetPieData } from "@/lib/definitions";
+import style from './style.module.css';
 
-import {
-  Card,
-  CardContent,
-} from "@/components/ui/card"
-import {
-  ChartConfig,
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart"
+interface Props{
+  chartData:BudgetPieData[],
+  currentBalance:number
+}
 
-const chartData = [
-    { budget: "entertainment", count: 50, fill: "#277C78" },
-    { budget: "bills", count: 750, fill: "#82C9D7" },
-    { budget: "dining", count: 75, fill: "#F2CDAC" },
-    { budget: "personal care", count: 100, fill: "#626070" },
-  ];
- 
 const chartConfig = {
-  limit: {
-    label: "Limits",
+  counts: {
+    label: "Counts",
   },
   entertainment: {
     label: "Entertainment",
-    color: "#277C78",
+    color: "hsl(var(--green_clr))",
   },
   bills: {
     label: "Bills",
-    color: "#82C9D7",
+    color: "hsl(var(--cyan_clr))",
   },
   dining: {
     label: "Dining out",
-    color: "#F2CDAC",
+    color: "hsl(var(--yellow_clr))",
   },
   personal: {
     label: "Personal Care",
-    color: "#626070",
+    color: "hsl(var(--navy_clr))",
   }
 } satisfies ChartConfig
 
-export function BudgetChart() {
-  const totalVisitors = React.useMemo(() => {
+export function BudgetChart({chartData,currentBalance}:Props) {
+  const totalCounts = React.useMemo(() => {
     return chartData.reduce((acc, curr) => acc + curr.count, 0)
-  }, [])
+  }, [chartData])
   
-  const currentBalance = 338;
-
   return (
     <Card className={`${"flex flex-col"} ${style.card}`}>
       
@@ -95,7 +83,7 @@ export function BudgetChart() {
                           y={(viewBox.cy || 0) + 32}
                           className="fill-muted-foreground"
                         >
-                          of ${totalVisitors.toLocaleString()} limits
+                          of ${totalCounts.toLocaleString()} limits
                         </tspan>
                       </text>
                     )
