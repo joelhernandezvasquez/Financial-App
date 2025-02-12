@@ -4,6 +4,7 @@ import { BalanceSumary } from "@/ui/overview/balance-summary/BalanceSumary";
 import PotsSummary from "@/ui/overview/pots-summary/PotsSummary";
 import TransactionSummary from "@/ui/overview/transactions-summary/TransactionSummary";
 import { BudgetSummary } from "@/ui/overview/budget-summary/BudgetSummary";
+import RecurringBillsSummary from "@/ui/overview/recurring-bills-summary/RecurringBillsSummary";
 
 export default function Home() {
   return (
@@ -24,6 +25,10 @@ export default function Home() {
 
         <Suspense fallback={'Loading...'}>
           <BudgetSummary/>
+        </Suspense>
+
+        <Suspense fallback={'Loading...'}>
+           <RecurringBillsSummary/>
         </Suspense>
 
      </main>

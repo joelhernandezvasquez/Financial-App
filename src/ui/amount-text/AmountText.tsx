@@ -2,11 +2,12 @@ import { formatCurrency } from '@/lib/utils';
 import style from './style.module.css';
 
 interface Props{
-    amount:number
+    amount:number,
+    size:'sm' | 'lg'
 }
-const AmountText = ({amount}:Props) => {
+const AmountText = ({amount,size}:Props) => {
   return (
-    <p className={style.balance_amount}>{formatCurrency(amount)}</p>
+    <p className={`${style.balance_amount} ${style[size]}`}>{formatCurrency(amount)}</p>
   )
 }
 

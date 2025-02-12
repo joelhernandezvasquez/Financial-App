@@ -37,3 +37,7 @@ export const formatCurrency = (value: number): string => {
       }
   })
 }
+
+export const getBorderTheme = (theme:string) =>{
+  return {borderLeft:`4px solid ${theme}`}
+}

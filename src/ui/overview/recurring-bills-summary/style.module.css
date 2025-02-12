@@ -1,0 +1,18 @@
+.bills_container{
+    background:var(--white_clr);
+    border-radius: 12px;
+    margin-top:var(--spacing_200);
+    padding:var(--spacing_300) var(--spacing_250);
+}
+
+.bills_header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.bills_items{
+    display:flex;
+    flex-direction: column;
+    gap:12px;
+    padding-top:var(--spacing_400);
+}
