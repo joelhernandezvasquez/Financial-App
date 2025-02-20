@@ -10,9 +10,15 @@
     gap:var(--spacing_150);
 }
 
-@media(min-width:767px){
+
+@media(min-width:1200px){
+    .balance_container{
+        grid-column: 1/-1;
+     }
     .balance_content{
         flex-direction: row;
         gap:24px;
     }
 }
+
+

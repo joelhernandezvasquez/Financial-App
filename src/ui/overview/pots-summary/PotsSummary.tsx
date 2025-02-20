@@ -26,7 +26,7 @@ const PotsSummary = async() => {
         />
         <div className={style.total_save_box_amount}>
           <p className={style.total_save_box_amount_text}>Total Saved</p>
-          <AmountText amount={850}/>
+          <AmountText amount={850} size='lg'/>
         </div>
       </div>
 

@@ -4,11 +4,13 @@ import { BalanceSumary } from "@/ui/overview/balance-summary/BalanceSumary";
 import PotsSummary from "@/ui/overview/pots-summary/PotsSummary";
 import TransactionSummary from "@/ui/overview/transactions-summary/TransactionSummary";
 import { BudgetSummary } from "@/ui/overview/budget-summary/BudgetSummary";
-
+import RecurringBillsSummary from "@/ui/overview/recurring-bills-summary/RecurringBillsSummary";
+import home from './home.module.css';
 export default function Home() {
   return (
-      <main>
-        <ContentTitle title="overview"/>
+    <>
+    <ContentTitle title="overview"/>
+      <main className={home.grid_container}>
         {/* TODO:Need to have a suspense boundary along with a loading file with the skeleton */}
         <Suspense fallback={'Loading...'}>
            <BalanceSumary/>
@@ -26,7 +28,11 @@ export default function Home() {
           <BudgetSummary/>
         </Suspense>
 
-     </main>
+        <Suspense fallback={'Loading...'}>
+           <RecurringBillsSummary/>
+        </Suspense>
 
+     </main>
+     </>
   );
 }

@@ -1,28 +1,26 @@
-
-.transaction_container{
-    display:flex;
-    flex-direction: column;
+.bills_container{
     background:var(--white_clr);
     border-radius: 12px;
-    margin:var(--spacing_300) 0;
+    margin-top:var(--spacing_200);
     padding:var(--spacing_300) var(--spacing_250);
 }
 
-.transactions_header{
+.bills_header{
     display:flex;
     align-items: center;
     justify-content: space-between;
 }
-
-.transaction_items_container{
+.bills_items{
+    display:flex;
+    flex-direction: column;
+    gap:12px;
     padding-top:var(--spacing_400);
-    padding-bottom: var(--spacing_300);
 }
 
-
 @media(min-width:1200px){
-    .transaction_container{
-     grid-column: 1/3;
-     margin:0;
+    .bills_container{
+        margin:0;
+        grid-column: 3/4;
+        height: fit-content;
     }
 }

@@ -35,3 +35,10 @@ export interface BudgetPieData{
   count:number,
   fill:string
 }
+
+export interface Bill{
+  id:number,
+  category:string,
+  amount:number
+  theme:string
+}
