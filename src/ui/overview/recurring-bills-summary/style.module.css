@@ -16,3 +16,11 @@
     gap:12px;
     padding-top:var(--spacing_400);
 }
+
+@media(min-width:1200px){
+    .bills_container{
+        margin:0;
+        grid-column: 3/4;
+        height: fit-content;
+    }
+}

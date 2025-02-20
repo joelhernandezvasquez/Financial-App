@@ -34,3 +34,10 @@
     margin:0 auto ;
 }
 }
+
+@media(min-width:1200px){
+    .budget_container{
+        grid-column: 3/4;
+        grid-row:2/3;
+    }
+}
