@@ -1,0 +1,40 @@
+.transaction_container{
+    background:var(--white_clr);
+    height:500px;
+    margin-top:2rem;
+    padding: var(--spacing_300) var(--spacing_250);
+    border-radius: 12px;
+}
+
+.header{
+    display:flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    gap:1rem;
+    
+}
+
+.search{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    background:var(--white_clr);
+    border:1px solid var(--beige_500);
+    border-radius: .5rem;
+    padding:var(--spacing_150);
+}
+
+.search_input{
+    color: var(--grey_900);
+    font-size: 1rem;
+    outline: none;
+}
+.search:focus-within{
+    border:1px solid var(--grey_900);
+}
+
+.filter_container{
+    display:flex;
+    align-items: center;
+    gap:1rem;
+}
