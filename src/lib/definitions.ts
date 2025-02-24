@@ -42,3 +42,7 @@ export interface Bill{
   amount:number
   theme:string
 }
+
+export interface TransactionCategories {
+  category:string
+}

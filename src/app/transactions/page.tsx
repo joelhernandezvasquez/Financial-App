@@ -1,10 +1,15 @@
 import Image from "next/image";
 import { ContentTitle } from "@/ui/content-title/ContentTitle";
-import style from './style.module.css';
 import { SortTransaction } from "@/ui/transaction/sort-transaction/SortTransaction";
 import CategoryTransaction from "@/ui/transaction/category-transaction/CategoryTransaction";
+import { getTransactionCategories } from "@/lib/actions";
+import style from './style.module.css';
 
-export default function Transactions(){
+
+export default async function Transactions(){
+
+  const categoryTransactions = (await getTransactionCategories()).map(item => item.category)
+   
     return(
       <>
       <ContentTitle title="transactions"/>
@@ -25,7 +30,7 @@ export default function Transactions(){
            
            <div className={style.filter_container}>
               <SortTransaction/>
-              <CategoryTransaction/>
+              <CategoryTransaction categories={categoryTransactions}/>
            </div>
            
         </header>
@@ -33,3 +38,5 @@ export default function Transactions(){
       </>
     )
     }
+
+

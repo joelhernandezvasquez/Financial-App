@@ -12,4 +12,27 @@ export const navigationLinks:NavigationLinks [] = [
     {name:'Bills', href:'/bills', icon:'/assets/billsIcon.svg'},
   ]
 
+  export const sortFilterItems: string [] = [
+    'Latest',
+    'Oldest',
+    'A to Z',
+    'Z to A',
+    'Highest',
+    'Lowest'
+  ]
+
+  export const categoryFilterItems: string [] = [
+    'All Transactions',
+    'Entertainment',
+    'Bills',
+    'Groceries',
+    'Dining Out',
+    'Transportation',
+    'Personal Care',
+    'Education',
+    'LifeStyle',
+    'Shopping',
+    'General'
+  ]
+
   

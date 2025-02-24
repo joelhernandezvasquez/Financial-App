@@ -1,4 +1,4 @@
-import { Balance, Bill, Budget, Pots, Transaction } from "./definitions";
+import { Balance, Bill, Budget, Pots, Transaction, TransactionCategories } from "./definitions";
 
 const {HOST} = process.env;
 
@@ -99,5 +99,25 @@ export const getTransactionSummary = async():Promise<Bill[]> =>{
       console.log(error)
     }
     return []
+  }
+}
+
+export const getTransactionCategories = async():Promise<TransactionCategories[]> =>{
+  try{
+    const request = await fetch(`${HOST}/transactions/categories`);
+
+    if(!request.ok) {
+      throw Error('Something while fetching transaction categories summary')
+    }
+    return await request.json();
+  }
+  catch(error){
+    if(error instanceof Error){
+      throw Error(error.message)
+    }
+    else{
+      console.log(error)
+    }
+    return [];
   }
 }
