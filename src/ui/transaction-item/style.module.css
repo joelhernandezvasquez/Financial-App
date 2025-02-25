@@ -37,4 +37,11 @@
 
 .transaction_item:last-child{
     padding-bottom: 0;
+    border-bottom: 0;
+
+}
+
+.transaction_item_category{
+   color:var(--grey_500);
+   font-size: .75rem;
 }

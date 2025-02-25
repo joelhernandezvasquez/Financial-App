@@ -2,7 +2,7 @@ import { fetchTransactions } from '@/lib/actions';
 import { filterTransactions } from '@/lib/utils';
 import SubTitle from '@/ui/sub-title/SubTitle';
 import LinkButton from '@/ui/link-button/LinkButton';
-import TransactionSummaryItem from './transaction-item/TransactionSummaryItem';
+import TransactionSummaryItem from '../../transaction-item/TransactionSummaryItem';
 import style from './style.module.css';
 
 const TransactionSummary = async() => {

@@ -1,42 +1,43 @@
-import Image from "next/image";
 import { ContentTitle } from "@/ui/content-title/ContentTitle";
 import { SortTransaction } from "@/ui/transaction/sort-transaction/SortTransaction";
+import Search from "@/ui/search/Search";
 import CategoryTransaction from "@/ui/transaction/category-transaction/CategoryTransaction";
-import { getTransactionCategories } from "@/lib/actions";
-import style from './style.module.css';
+import { fetchTransactions, getTransactionCategories } from "@/lib/actions";
+import { filterTransactions } from "@/lib/utils";
+import TransactionSummaryItem from "@/ui/transaction-item/TransactionSummaryItem";
+import style from "./style.module.css";
 
+export default async function Transactions() {
+  // TODO:NEED TO HAVE HERE AN ARRAY OF PROMISES AND FETCH PARALLEL
+  const categoryTransactions = (await getTransactionCategories()).map(
+    (item) => item.category
+  );
+  const transactions = filterTransactions(await fetchTransactions(), 10);
 
-export default async function Transactions(){
-
-  const categoryTransactions = (await getTransactionCategories()).map(item => item.category)
-   
-    return(
-      <>
-      <ContentTitle title="transactions"/>
+  return (
+    <>
+      <ContentTitle title="transactions" />
       <main className={style.transaction_container}>
         <header className={style.header}>
-
-        {/* TODO: Search Component  need to be convert to a reusable component*/}
-          <div className={style.search}>
-             <input className={style.search_input} type="text" placeholder="Search transaction"/>
-             <Image
-              width={16}
-              height={16}
-              src={'/assets/searchIcon.svg'}
-              alt=""
-             />
+          <Search />
+          <div className={style.filter_container}>
+            <SortTransaction />
+            <CategoryTransaction categories={categoryTransactions} />
           </div>
-          {/* END OF Search Component*/}
-           
-           <div className={style.filter_container}>
-              <SortTransaction/>
-              <CategoryTransaction categories={categoryTransactions}/>
-           </div>
-           
         </header>
+
+        <ul className={style.transaction_content}>
+          {transactions.map((transaction) => {
+            return (
+              <TransactionSummaryItem
+                key={transaction.id}
+                transaction={transaction}
+                showTransactionCategory
+              />
+            );
+          })}
+        </ul>
       </main>
-      </>
-    )
-    }
-
-
+    </>
+  );
+}
