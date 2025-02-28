@@ -1,0 +1,25 @@
+.pagination_btn{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:.5rem;
+    padding:.7rem;
+    border: 1px solid var(--beige_500);
+    color:var(--grey_900);
+    font-size: .875rem;
+    font-weight: 400;
+    min-width: 43px;
+    min-height: 45px;
+    cursor: pointer;
+    transition:all 250ms ease-in-out;
+}
+
+.pagination_btn:hover{
+    background: var(--beige_500);
+    color:var(--white_clr)
+}
+
+.active_btn{
+    background:var(--grey_900);
+    color:var(--white_clr);
+}

@@ -2,9 +2,10 @@ import { ContentTitle } from "@/ui/content-title/ContentTitle";
 import { SortTransaction } from "@/ui/transaction/sort-transaction/SortTransaction";
 import Search from "@/ui/search/Search";
 import CategoryTransaction from "@/ui/transaction/category-transaction/CategoryTransaction";
+import TransactionSummaryItem from "@/ui/transaction-item/TransactionSummaryItem";
+import TransactionPagination from "@/ui/transaction/transaction-pagination/TransactionPagination";
 import { fetchTransactions, getTransactionCategories } from "@/lib/actions";
 import { filterTransactions } from "@/lib/utils";
-import TransactionSummaryItem from "@/ui/transaction-item/TransactionSummaryItem";
 import style from "./style.module.css";
 
 export default async function Transactions() {
@@ -12,7 +13,8 @@ export default async function Transactions() {
   const categoryTransactions = (await getTransactionCategories()).map(
     (item) => item.category
   );
-  const transactions = filterTransactions(await fetchTransactions(), 10);
+  const transactions = await fetchTransactions();
+  const transactionsFiltered = filterTransactions(transactions, 10);
 
   return (
     <>
@@ -27,7 +29,7 @@ export default async function Transactions() {
         </header>
 
         <ul className={style.transaction_content}>
-          {transactions.map((transaction) => {
+          {transactionsFiltered.map((transaction) => {
             return (
               <TransactionSummaryItem
                 key={transaction.id}
@@ -37,6 +39,12 @@ export default async function Transactions() {
             );
           })}
         </ul>
+       
+       <footer>
+       <TransactionPagination totalPages={Math.ceil(50/ 10)}/>
+         {/* <TransactionPagination transactionCount={Math.ceil(transactions.length / 10)}/> */}
+       </footer>
+        
       </main>
     </>
   );
