@@ -16,3 +16,9 @@
 .search:focus-within{
     border:1px solid var(--grey_900);
 }
+
+@media(min-width:1200px){
+    .search{
+        min-width: 320px;
+    }
+}

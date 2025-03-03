@@ -20,3 +20,10 @@
 .transaction_content{
     margin:var(--spacing_400) 0;
 }
+
+@media(min-width:767px){
+    .filter_container{
+      
+        gap:1.5rem;
+    } 
+}

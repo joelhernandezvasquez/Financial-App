@@ -9,19 +9,18 @@ import UseClickAway from '@/hooks/click-away/UseClickAway';
 interface Props{
   categories: string[]
 }
+//TODO: Refactor this component
 
 const CategoryTransaction = ({categories}:Props) => {
   
   const {isToggle,handleToggle} = UseToggle();
-  const [currentCategory,setCategory] = useState('');
+  const [currentCategory,setCategory] = useState('All Transactions');
   const dropdownRef = UseClickAway(handleToggle);
 
   const handleOnClickCategory = (value:string) =>{
     setCategory(value);
     handleToggle();
   } 
-
-  console.log(currentCategory)
 
   return (
     <div className={style.category_container}>
@@ -33,6 +32,19 @@ const CategoryTransaction = ({categories}:Props) => {
            alt=''
           />
         </button>
+
+        <div className={style.larger_screen_category_transaction}>
+         <label htmlFor="category">Category</label>
+         <button id='category' className={style.desktop_category_transaction} onClick={handleToggle}>
+          {currentCategory}
+          <Image
+           width={16}
+           height={16}
+           src={'/assets/arrowDown.svg'}
+           alt=''
+          />
+        </button>
+       </div>
         
         {isToggle && (
         <div ref={dropdownRef}>
@@ -42,8 +54,7 @@ const CategoryTransaction = ({categories}:Props) => {
            />
         </div>
         )}
-        
-    
+         
     </div>
   )
 }
