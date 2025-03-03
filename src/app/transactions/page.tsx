@@ -23,7 +23,7 @@ export default async function Transactions() {
         <header className={style.header}>
           <Search />
           <div className={style.filter_container}>
-            <SortTransaction />
+            <SortTransaction/>
             <CategoryTransaction categories={categoryTransactions} />
           </div>
         </header>
@@ -41,7 +41,7 @@ export default async function Transactions() {
         </ul>
        
        <footer>
-       <TransactionPagination totalPages={Math.ceil(50/ 10)}/>
+       <TransactionPagination totalPages={Math.ceil(30/ 10)}/>
          {/* <TransactionPagination transactionCount={Math.ceil(transactions.length / 10)}/> */}
        </footer>
         
