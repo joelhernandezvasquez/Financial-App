@@ -7,6 +7,7 @@ import TransactionPagination from "@/ui/transaction/transaction-pagination/Trans
 import { fetchTransactions, getTransactionCategories } from "@/lib/actions";
 import { filterTransactions } from "@/lib/utils";
 import style from "./style.module.css";
+import TransactionTable from "@/ui/transaction/transaction-table/TransactionTable";
 
 export default async function Transactions() {
   // TODO:NEED TO HAVE HERE AN ARRAY OF PROMISES AND FETCH PARALLEL
@@ -27,7 +28,8 @@ export default async function Transactions() {
             <CategoryTransaction categories={categoryTransactions} />
           </div>
         </header>
-
+        
+        {/* TODO:Refactor the content table to show only one component */}
         <ul className={style.transaction_content}>
           {transactionsFiltered.map((transaction) => {
             return (
@@ -39,6 +41,8 @@ export default async function Transactions() {
             );
           })}
         </ul>
+
+        <TransactionTable transactions={transactionsFiltered}/>
        
        <footer>
        <TransactionPagination totalPages={Math.ceil(30/ 10)}/>

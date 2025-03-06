@@ -1,0 +1,19 @@
+
+.transaction_table{
+    margin:var(--spacing_300) 0;
+}
+
+
+.table_head_text{
+    color:var(--grey_500);
+}
+.two_column{
+    display:flex;
+    align-items: center;
+    gap:1.5rem;
+}
+.transaction_name{
+    color:var(--grey_900);
+    font-weight: 900;
+}
+

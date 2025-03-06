@@ -13,6 +13,7 @@
     overflow: auto;
     min-width: 140px;
     width: max-content;
+   z-index: 1;
 }
 
 .dropdown_title{
