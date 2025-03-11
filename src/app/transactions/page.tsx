@@ -45,8 +45,7 @@ export default async function Transactions() {
         <TransactionTable transactions={transactionsFiltered}/>
        
        <footer>
-       <TransactionPagination totalPages={Math.ceil(30/ 10)}/>
-         {/* <TransactionPagination transactionCount={Math.ceil(transactions.length / 10)}/> */}
+         <TransactionPagination totalPages={Math.ceil(transactions.length / 10)}/>
        </footer>
         
       </main>

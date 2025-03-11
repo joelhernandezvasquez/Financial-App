@@ -32,3 +32,13 @@
 .pagination_list_btns > li > button{
     min-width: 43px;
 }
+
+@media(min-width:767px){
+    .pagination_list_btns{
+        max-width: min-content;
+        overflow: auto; 
+    }
+    .pagination_list_btns{
+       gap:.5rem;
+    }
+}

@@ -28,6 +28,7 @@ const TransactionPagination = ({totalPages}:Props) => {
       <PaginationArrow
        direction='left'
        href={createPageURL(currentPage - 1)}
+       text="Prev"
        isDisabled = {currentPage <=1}
       />
 
@@ -58,6 +59,7 @@ const TransactionPagination = ({totalPages}:Props) => {
     <PaginationArrow
        direction='right'
        href={createPageURL(currentPage + 1)}
+       text="Next"
        isDisabled = {currentPage >=totalPages}
       />
     </section>

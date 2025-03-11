@@ -1,5 +1,6 @@
 
 .transaction_table{
+    display:none;
     margin:var(--spacing_300) 0;
 }
 
@@ -15,5 +16,12 @@
 .transaction_name{
     color:var(--grey_900);
     font-weight: 900;
+}
+
+@media(min-width:767px){
+    .transaction_table{
+        display:table;
+       
+    }
 }
 

@@ -18,6 +18,7 @@
 }
 
 .transaction_content{
+    display: block;
     margin:var(--spacing_400) 0;
 }
 
