@@ -1,0 +1,44 @@
+
+.pagination_container{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:.5rem;
+    margin-top:var(--spacing_300);
+    padding-top:var(--spacing_300); 
+}
+
+.pagination_btn{
+    border-radius:.5rem;
+    padding:.7rem;
+    border: 1px solid var(--beige_500);
+    color:var(--grey_900);
+    font-size: .875rem;
+    font-weight: 400;
+    min-width: 43px;
+    min-height: 45px;
+   }
+.pagination_list_btns{
+    display:flex;
+    gap:5px;
+    max-width: 200px;
+    overflow: auto; 
+}
+.pagination_list_btns > li{
+    flex:1;
+    display:flex;
+    justify-content: center;
+}
+.pagination_list_btns > li > button{
+    min-width: 43px;
+}
+
+@media(min-width:767px){
+    .pagination_list_btns{
+        max-width: min-content;
+        overflow: auto; 
+    }
+    .pagination_list_btns{
+       gap:.5rem;
+    }
+}

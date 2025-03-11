@@ -1,0 +1,39 @@
+.transaction_container{
+    background:var(--white_clr);
+    margin-top:2rem;
+    padding: var(--spacing_300) var(--spacing_250);
+    border-radius: 12px;
+}
+
+.header{
+    display:flex;
+    justify-content: space-between;
+    gap:1rem;  
+}
+
+.filter_container{
+    display:flex;
+    align-items: center;
+    gap:1rem;
+}
+
+.transaction_content{
+    display: block;
+    margin:var(--spacing_400) 0;
+}
+
+@media(min-width:767px){
+    .filter_container{
+      gap:1rem;
+    } 
+
+    .transaction_content{
+        display: none;
+    }
+}
+
+@media(min-width:1200px){
+    .filter_container{
+      gap:1.5rem;
+    } 
+}

@@ -1,0 +1,24 @@
+.search{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    background:var(--white_clr);
+    border:1px solid var(--beige_500);
+    border-radius: .5rem;
+    padding:var(--spacing_150);
+}
+
+.search_input{
+    color: var(--grey_900);
+    font-size: 1rem;
+    outline: none;
+}
+.search:focus-within{
+    border:1px solid var(--grey_900);
+}
+
+@media(min-width:1200px){
+    .search{
+        min-width: 320px;
+    }
+}

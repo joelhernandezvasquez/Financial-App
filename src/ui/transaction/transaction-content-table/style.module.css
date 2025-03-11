@@ -1,0 +1,10 @@
+.transaction_content{
+    display: block;
+    margin:var(--spacing_400) 0;
+}
+
+@media(min-width:767px){
+    .transaction_content{
+        display: none;
+    }
+}
