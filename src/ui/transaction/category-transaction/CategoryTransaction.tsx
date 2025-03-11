@@ -1,18 +1,15 @@
 'use client';
-import UseToggle from '@/hooks/use-toggle/UseToggle';
 import { useState } from 'react';
+import UseToggle from '@/hooks/use-toggle/UseToggle';
+import UseClickAway from '@/hooks/click-away/UseClickAway';
 import Image from 'next/image';
 import Dropdown from '@/ui/dropdown/Dropdown';
 import style from './style.module.css';
-import UseClickAway from '@/hooks/click-away/UseClickAway';
-
 interface Props{
   categories: string[]
 }
-//TODO: Refactor this component
 
 const CategoryTransaction = ({categories}:Props) => {
-  
   const {isToggle,handleToggle} = UseToggle();
   const [currentCategory,setCategory] = useState('All Transactions');
   const dropdownRef = UseClickAway(handleToggle);
@@ -24,6 +21,7 @@ const CategoryTransaction = ({categories}:Props) => {
 
   return (
     <div className={style.category_container}>
+          {/* Mobile view of the category transaction */}
         <button className={style.mobile_category_transaction} onClick={handleToggle}>
           <Image
            width={20}
@@ -33,6 +31,7 @@ const CategoryTransaction = ({categories}:Props) => {
           />
         </button>
 
+      {/* Tablet and large screen view of the sort transaction */}
         <div className={style.larger_screen_category_transaction}>
          <label htmlFor="category">Category</label>
          <button id='category' className={style.desktop_category_transaction} onClick={handleToggle}>
@@ -53,8 +52,7 @@ const CategoryTransaction = ({categories}:Props) => {
            callback={handleOnClickCategory}
            />
         </div>
-        )}
-         
+        )}       
     </div>
   )
 }

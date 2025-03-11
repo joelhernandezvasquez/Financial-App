@@ -42,6 +42,10 @@ export const getBorderTheme = (theme:string) =>{
   return {borderLeft:`4px solid ${theme}`}
 }
 
+export const getTotalPages = (transactions:Transaction[],itemsPerPage:number) =>{
+  return Math.ceil(transactions.length / itemsPerPage);
+}
+
 export const generatePagination = (currentPage: number, totalPages: number) => {
   // If the total number of pages is 7 or less,
   // display all pages without any ellipsis.
@@ -74,3 +78,4 @@ export const generatePagination = (currentPage: number, totalPages: number) => {
     totalPages,
   ];
 };
+
