@@ -24,10 +24,16 @@
 
 @media(min-width:767px){
     .filter_container{
-      gap:1.5rem;
+      gap:1rem;
     } 
 
     .transaction_content{
         display: none;
     }
+}
+
+@media(min-width:1200px){
+    .filter_container{
+      gap:1.5rem;
+    } 
 }
