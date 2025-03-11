@@ -4,17 +4,19 @@ import Search from "@/ui/search/Search";
 import CategoryTransaction from "@/ui/transaction/category-transaction/CategoryTransaction";
 import TransactionSummaryItem from "@/ui/transaction-item/TransactionSummaryItem";
 import TransactionPagination from "@/ui/transaction/transaction-pagination/TransactionPagination";
+import TransactionTable from "@/ui/transaction/transaction-table/TransactionTable";
 import { fetchTransactions, getTransactionCategories } from "@/lib/actions";
 import { filterTransactions } from "@/lib/utils";
 import style from "./style.module.css";
-import TransactionTable from "@/ui/transaction/transaction-table/TransactionTable";
 
 export default async function Transactions() {
-  // TODO:NEED TO HAVE HERE AN ARRAY OF PROMISES AND FETCH PARALLEL
-  const categoryTransactions = (await getTransactionCategories()).map(
-    (item) => item.category
-  );
-  const transactions = await fetchTransactions();
+  
+  const [categoriesTransactions, transactions] = await Promise.all([
+    (getTransactionCategories()),
+    fetchTransactions()
+  ]);
+
+  const categories = categoriesTransactions.map(item => item.category)
   const transactionsFiltered = filterTransactions(transactions, 10);
 
   return (
@@ -25,7 +27,7 @@ export default async function Transactions() {
           <Search />
           <div className={style.filter_container}>
             <SortTransaction/>
-            <CategoryTransaction categories={categoryTransactions} />
+            <CategoryTransaction categories={categories} />
           </div>
         </header>
         
