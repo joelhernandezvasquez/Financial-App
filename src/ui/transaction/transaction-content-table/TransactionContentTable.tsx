@@ -11,7 +11,7 @@ interface Props{
 }
 
 const TransactionContentTable = async ({query,currentPage,sortBy}:Props) => {
-  const transactions = await fetchFilterTransactions(query,sortBy!);
+  const transactions = await fetchFilterTransactions(query, currentPage,sortBy!);
   
   return (
     <>

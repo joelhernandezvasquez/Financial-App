@@ -60,9 +60,9 @@ export const fetchTransactions = async():Promise<Transaction[]>=>{
    }
 }
 
-export const fetchFilterTransactions = async(query:string,sortBy:string):Promise<Transaction[]>=>{
+export const fetchFilterTransactions = async(query:string,currentPage:string,sortBy:string):Promise<Transaction[]>=>{
   try{
-    const request = await fetch(`${HOST}/transactions/sender?query=${query}&sortBy=${sortBy}`);
+    const request = await fetch(`${HOST}/transactions/sender?query=${query}&page=${currentPage}&sortBy=${sortBy}`);
 
     if(!request.ok){
        console.log(request);
