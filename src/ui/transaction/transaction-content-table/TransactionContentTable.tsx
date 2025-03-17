@@ -6,14 +6,13 @@ import style from './style.module.css';
 
 interface Props{
     query:string,
+    sortBy?:string,
     currentPage:number,
 }
 
-const TransactionContentTable = async ({query,currentPage}:Props) => {
-  const transactions = await fetchFilterTransactions(query);
+const TransactionContentTable = async ({query,currentPage,sortBy}:Props) => {
+  const transactions = await fetchFilterTransactions(query,sortBy!);
   
-  // const transactionsFiltered = filterTransactions(transactions, 10);
-
   return (
     <>
     <ul className={style.transaction_content}>

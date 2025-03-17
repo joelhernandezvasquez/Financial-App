@@ -13,7 +13,7 @@ interface Props{
 
 const CategoryTransaction = ({categories}:Props) => {
   const {isToggle,handleToggle} = UseToggle();
-  const [currentCategory,setCategory] = useState('All Transactions');
+  const [currentCategory,setCategory] = useState(categories[0]);
   const dropdownRef = UseClickAway(handleToggle);
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -65,6 +65,7 @@ const CategoryTransaction = ({categories}:Props) => {
         <div ref={dropdownRef}>
          <Dropdown 
            dropdownItems={categories} 
+           currentItemSelected={currentCategory}
            callback={handleOnClickCategory}
            />
         </div>

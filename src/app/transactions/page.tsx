@@ -15,12 +15,14 @@ export default async function Transactions(props: {
   searchParams?: Promise<{
     query?: string;
     page?: string;
+    sortBy?:string
   }>;
 }) {
 
   const searchParams = await props.searchParams;
   const query = searchParams?.query || '';
   const currentPage = Number(searchParams?.page) || 1;
+  const sortBy = searchParams?.sortBy || '';
 
 {/* TODO: Need to update transaction pagination total pages to fetch */}
   const [categoriesTransactions, transactions] = await Promise.all([
@@ -44,7 +46,11 @@ export default async function Transactions(props: {
         </header>
         
         <Suspense key={query + currentPage} fallback={<SkeletonTable/>}>
-            <TransactionContentTable query={query} currentPage={currentPage}/> 
+            <TransactionContentTable 
+             query={query} 
+             currentPage={currentPage}
+             sortBy={sortBy}
+             /> 
         </Suspense>
        
        <footer>
