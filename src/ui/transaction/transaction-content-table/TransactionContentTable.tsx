@@ -1,13 +1,17 @@
 import TransactionSummaryItem from "@/ui/transaction-item/TransactionSummaryItem";
 import TransactionTable from "../transaction-table/TransactionTable";
-import { Transaction } from "@/lib/definitions";
+import { fetchFilterTransactions} from "@/lib/actions";
 import style from './style.module.css';
 
 interface Props{
-    transactions:Transaction[]
+    query:string,
+    sortBy?:string,
+    currentPage:number | string,
 }
 
-const TransactionContentTable = ({transactions}:Props) => {
+const TransactionContentTable = async ({query,currentPage,sortBy}:Props) => {
+  const transactions = await fetchFilterTransactions(query, currentPage,sortBy!);
+  
   return (
     <>
     <ul className={style.transaction_content}>

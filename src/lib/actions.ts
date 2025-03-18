@@ -60,6 +60,46 @@ export const fetchTransactions = async():Promise<Transaction[]>=>{
    }
 }
 
+export const fetchFilterTransactions = async(query:string,currentPage:string | number,sortBy:string):Promise<Transaction[]>=>{
+  try{
+    const request = await fetch(`${HOST}/transactions/sender?query=${query}&page=${currentPage}&sortBy=${sortBy}`);
+
+    if(!request.ok){
+       console.log(request);
+       throw Error('Something went wrong while fetching transactions');
+    }
+    const response = await request.json();
+    return response;
+  }
+  catch(error){
+   if(error instanceof Error){
+     throw Error(error.message);
+   }
+    else console.log(error);
+   return [];
+  }
+}
+
+export const fetchTransactionPages = async(query:string):Promise<number>=>{
+  try{
+    const request = await fetch(`${HOST}/transactions/pages?query=${query}`);
+
+    if(!request.ok){
+       console.log(request);
+       throw Error('Something went wrong while fetching transactions');
+    }
+    const response = await request.json();
+    return response;
+  }
+  catch(error){
+   if(error instanceof Error){
+     throw Error(error.message);
+   }
+    else console.log(error);
+   return 0;
+  }
+}
+
 export const getBudgets = async():Promise<Budget[]> =>{
   try{
     const request = await fetch(`${HOST}/budget`);

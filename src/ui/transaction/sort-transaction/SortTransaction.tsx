@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import UseClickAway from '@/hooks/click-away/UseClickAway';
 import UseToggle from '@/hooks/use-toggle/UseToggle';
 import Image from 'next/image';
@@ -11,11 +12,29 @@ export const SortTransaction = () => {
    const {isToggle,handleToggle} = UseToggle();
    const [currentSortValue,setSortValue] = useState('Latest');
    const dropdownRef = UseClickAway(handleToggle);
+   const searchParams = useSearchParams();
+   const pathname = usePathname();
+   const {replace} = useRouter();
 
    const handleOnClickSortValue = (value:string) =>{
      setSortValue(value);
+
+     const params = new URLSearchParams(searchParams);
+     params.set('page','1');
+     if(value){
+      params.set('sortBy',value)
+     }
+     else{
+      params.delete('sortBy')
+     }
+     replace(`${pathname}?${params.toString()}`)
      handleToggle();
    } 
+
+   /* 
+   2 - need to make sure the sortby is attached on the action call and the backend recieves it
+
+   */
   return (
     <section className={style.sort_container}>
         {/* Mobile view of the sort transaction */}
@@ -46,6 +65,7 @@ export const SortTransaction = () => {
           <div ref={dropdownRef}>
             <Dropdown 
               dropdownItems={sortFilterItems} 
+              currentItemSelected={currentSortValue}
               callback={handleOnClickSortValue}
               />
           </div>

@@ -42,8 +42,8 @@ export const getBorderTheme = (theme:string) =>{
   return {borderLeft:`4px solid ${theme}`}
 }
 
-export const getTotalPages = (transactions:Transaction[],itemsPerPage:number) =>{
-  return Math.ceil(transactions.length / itemsPerPage);
+export const getTotalPages = (transactions:number,itemsPerPage:number) =>{
+  return Math.ceil(transactions / itemsPerPage);
 }
 
 export const generatePagination = (currentPage: number, totalPages: number) => {

@@ -1,21 +1,37 @@
 'use client';
 import { useState } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import UseToggle from '@/hooks/use-toggle/UseToggle';
 import UseClickAway from '@/hooks/click-away/UseClickAway';
 import Image from 'next/image';
 import Dropdown from '@/ui/dropdown/Dropdown';
 import style from './style.module.css';
+
 interface Props{
   categories: string[]
 }
 
 const CategoryTransaction = ({categories}:Props) => {
   const {isToggle,handleToggle} = UseToggle();
-  const [currentCategory,setCategory] = useState('All Transactions');
+  const [currentCategory,setCategory] = useState(categories[0]);
   const dropdownRef = UseClickAway(handleToggle);
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const {replace} = useRouter();
 
   const handleOnClickCategory = (value:string) =>{
     setCategory(value);
+   
+    const params = new URLSearchParams(searchParams);
+    params.set('page','1');
+
+    if(value){
+      params.set('query', value);
+    }
+    else{
+      params.delete('query');
+    }
+    replace(`${pathname}?${params.toString()}`);
     handleToggle();
   } 
 
@@ -49,6 +65,7 @@ const CategoryTransaction = ({categories}:Props) => {
         <div ref={dropdownRef}>
          <Dropdown 
            dropdownItems={categories} 
+           currentItemSelected={currentCategory}
            callback={handleOnClickCategory}
            />
         </div>
