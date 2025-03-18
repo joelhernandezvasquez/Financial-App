@@ -4,12 +4,11 @@ import { SortTransaction } from "@/ui/transaction/sort-transaction/SortTransacti
 import Search from "@/ui/search/Search";
 import CategoryTransaction from "@/ui/transaction/category-transaction/CategoryTransaction";
 import TransactionPagination from "@/ui/transaction/transaction-pagination/TransactionPagination";
-import { fetchTransactions, getTransactionCategories } from "@/lib/actions";
+import { fetchTransactionPages, getTransactionCategories } from "@/lib/actions";
 import { getTotalPages } from "@/lib/utils";
 import TransactionContentTable from "@/ui/transaction/transaction-content-table/TransactionContentTable";
 import { SkeletonTable } from "@/ui/skeletons/Skeletons";
 import style from "./style.module.css";
-
 
 export default async function Transactions(props: {
   searchParams?: Promise<{
@@ -24,17 +23,16 @@ export default async function Transactions(props: {
   const currentPage = Number(searchParams?.page) || 1;
   const sortBy = searchParams?.sortBy || '';
 
-{/* TODO: Need to update transaction pagination total pages to fetch */}
   const [categoriesTransactions, transactions] = await Promise.all([
     (getTransactionCategories()),
-    fetchTransactions()
+    fetchTransactionPages(query)
   ]);
 
   const categories = categoriesTransactions.map(item => item.category);
 
   return (
     <>
-      <ContentTitle title="transactions" />
+      <ContentTitle title="transactions"/>
       <main className={style.transaction_container}>
         
         <header className={style.header}>
@@ -54,7 +52,6 @@ export default async function Transactions(props: {
         </Suspense>
        
        <footer>
-        {/* TODO: Need to update transaction pagination total pages to fetch */}
          <TransactionPagination totalPages={getTotalPages(transactions,10)}/>
        </footer>
 

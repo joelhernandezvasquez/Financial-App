@@ -1,13 +1,12 @@
 import TransactionSummaryItem from "@/ui/transaction-item/TransactionSummaryItem";
 import TransactionTable from "../transaction-table/TransactionTable";
 import { fetchFilterTransactions} from "@/lib/actions";
-import { filterTransactions } from "@/lib/utils";
 import style from './style.module.css';
 
 interface Props{
     query:string,
     sortBy?:string,
-    currentPage:number,
+    currentPage:number | string,
 }
 
 const TransactionContentTable = async ({query,currentPage,sortBy}:Props) => {
