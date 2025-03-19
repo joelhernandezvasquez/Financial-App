@@ -1,9 +1,9 @@
 import { Table, TableBody,TableCell,TableHead,TableHeader,TableRow} from "@/components/ui/table";
-import style from './style.module.css';
 import { Transaction } from "@/lib/definitions";
 import Avatar from "@/ui/avatar/Avatar";
 import { formatDate } from "@/lib/utils";
 import TransactionAmount from "@/ui/transaction-amount/TransactionAmount";
+import style from './style.module.css';
   
 interface Props{
     transactions:Transaction[],
