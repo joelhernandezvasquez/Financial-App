@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import { Metadata } from "next";
 import { ContentTitle } from "@/ui/content-title/ContentTitle";
 import { SortTransaction } from "@/ui/transaction/sort-transaction/SortTransaction";
 import Search from "@/ui/search/Search";
@@ -9,6 +10,11 @@ import { getTotalPages } from "@/lib/utils";
 import TransactionContentTable from "@/ui/transaction/transaction-content-table/TransactionContentTable";
 import { SkeletonTable } from "@/ui/skeletons/Skeletons";
 import style from "./style.module.css";
+
+export const metadata: Metadata = {
+  title: "Financial App | Transactions",
+  description: "Transactions",
+};
 
 export default async function Transactions(props: {
   searchParams?: Promise<{

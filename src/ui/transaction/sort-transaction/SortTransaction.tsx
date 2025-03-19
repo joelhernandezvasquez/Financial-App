@@ -31,10 +31,7 @@ export const SortTransaction = () => {
      handleToggle();
    } 
 
-   /* 
-   2 - need to make sure the sortby is attached on the action call and the backend recieves it
-
-   */
+   
   return (
     <section className={style.sort_container}>
         {/* Mobile view of the sort transaction */}

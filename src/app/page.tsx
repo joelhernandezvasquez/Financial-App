@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import { Metadata } from "next";
 import { ContentTitle } from "@/ui/content-title/ContentTitle";
 import { BalanceSumary } from "@/ui/overview/balance-summary/BalanceSumary";
 import PotsSummary from "@/ui/overview/pots-summary/PotsSummary";
@@ -6,6 +7,12 @@ import TransactionSummary from "@/ui/overview/transactions-summary/TransactionSu
 import { BudgetSummary } from "@/ui/overview/budget-summary/BudgetSummary";
 import RecurringBillsSummary from "@/ui/overview/recurring-bills-summary/RecurringBillsSummary";
 import home from './home.module.css';
+
+export const metadata: Metadata = {
+  title: "Financial App | Dashboard",
+  description: "Admin Dashboard",
+};
+
 export default function Home() {
   return (
     <>
