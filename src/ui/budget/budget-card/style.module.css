@@ -1,0 +1,37 @@
+.budget_card{
+    display:flex;
+    flex-direction: column;
+    padding:var(--spacing_300) var(--spacing_250);
+    margin:var(--spacing_300) 0;
+    background:var(--white_clr);
+    border-radius: 12px;
+}
+
+.budget_card_header{
+    display:flex;
+    align-items: center;
+    gap:1rem;
+}
+
+.category_theme_elipsis{
+    display:block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+}
+
+.budget_card button{
+    margin-left: auto;
+}
+
+.budget_card_content_info{
+   display:flex;
+   flex-direction: column;
+   padding:1rem 0;
+}
+
+.budget_card_content_info_maximun{
+  font-size: .875rem;
+  color:var(--grey_500);
+  font-weight: 400;
+}

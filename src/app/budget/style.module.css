@@ -1,0 +1,18 @@
+.header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom:var(--spacing_400);
+}
+
+.budget_container{
+    display:flex;
+    flex-direction: column;
+    gap:2rem;
+    background:var(--white_clr);
+    border-radius: 12px;
+    padding:var(--spacing_300) var(--spacing_250);
+}
+.spending_summary_item{
+    margin-top:1.5rem;
+}

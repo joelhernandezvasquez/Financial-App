@@ -1,0 +1,8 @@
+.btn_container{
+    background:var(--grey_900);
+    color:var(--white_clr);
+    font-weight: 700;
+    border-radius:.5rem;
+    padding:1rem;
+    font-size: .875rem;
+}
