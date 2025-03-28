@@ -20,7 +20,11 @@ const BudgetCard = ({budgetItem}:Props) => {
 
         <div className={style.budget_card_content_info}>
            <p className={style.budget_card_content_info_maximun}> Maximun of {formatCurrency(budgetItem.maximum)} </p>
-           <ProgressBar/>
+           <ProgressBar 
+            value={budgetItem.spent} 
+            max={budgetItem.maximum}
+            theme={budgetItem.theme}
+            />
         </div>
     </li>
   )

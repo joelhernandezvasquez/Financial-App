@@ -27,6 +27,7 @@
 .budget_card_content_info{
    display:flex;
    flex-direction: column;
+   gap:1rem;
    padding:1rem 0;
 }
 
