@@ -1,5 +1,6 @@
 import AmountText from '@/ui/amount-text/AmountText';
 import style from './style.module.css';
+import { CategoryThemeIndicator } from '@/ui/category-theme-indicator/CategoryThemeIndicator';
 
 interface Props{
  category:string,
@@ -12,7 +13,7 @@ const SpendingSummaryItem = ({category,theme,spent,maximum}:Props) => {
   return (
     <li className={style.summary_item}>
        <div>
-            <div style={{backgroundColor:theme}} className={style.category_theme}></div>
+           <CategoryThemeIndicator theme={theme} height='sm'/>
             <p className={style.category}>{category}</p>
        </div>
 

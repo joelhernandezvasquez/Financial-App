@@ -2,7 +2,7 @@
     display:flex;
     flex-direction: column;
     padding:var(--spacing_300) var(--spacing_250);
-    margin:var(--spacing_300) 0;
+    margin:var(--spacing_200) 0;
     background:var(--white_clr);
     border-radius: 12px;
 }
@@ -27,8 +27,8 @@
 .budget_card_content_info{
    display:flex;
    flex-direction: column;
-   gap:1rem;
-   padding:1rem 0;
+   gap:1.5rem;
+   padding:1.125rem 0 0;
 }
 
 .budget_card_content_info_maximun{
@@ -36,3 +36,59 @@
   color:var(--grey_500);
   font-weight: 400;
 }
+
+.budget_card_content_info_spent_free{
+    display:flex;
+    align-items: center;
+    gap:1rem;
+}
+.budget_card_content_info_spent_free > *{
+    flex:1;
+    display:flex;
+    gap:1rem;
+}
+
+.latest_spending_transactions{
+  display:flex;
+  flex-direction: column;
+  gap:20px;
+  background-color: var(--beige_100);
+  padding:1rem;
+  border-radius: 12px;
+}
+.latest_spending_transactions_header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.latest_spending_transactions_items{
+    display:flex;
+    flex-direction: column;
+    gap:12px;
+}
+
+.latest_spending_transactions_item{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(105, 104, 104, .15);
+}
+.latest_spending_transactions_item:last-child{ 
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+.latest_spending_transactions_item_name{
+    font-size: .75rem;
+    color:var(--grey_900);
+    font-weight: 900;
+}
+
+.latest_spending_transactions_item_content{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+

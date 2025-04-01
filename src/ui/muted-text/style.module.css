@@ -1,0 +1,6 @@
+
+.muted_text{
+    color:var(--grey_500);
+    font-size: .75rem;
+    font-weight: 400;
+  }
