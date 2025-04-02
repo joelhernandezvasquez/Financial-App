@@ -56,7 +56,9 @@ const BudgetCard = ({budgetItem}:Props) => {
                 <ul className={style.latest_spending_transactions_items}>
                  {budgetItem.latestSpending.map((item)=>{
                    return <li key={item.id} className={style.latest_spending_transactions_item}>
-                            <p className={style.latest_spending_transactions_item_name}>{item.name}</p>
+                             {/* TODO: need to add avatar from tablet and on */}
+                             {/* <Avatar imageUrl={item.avatar}/> */} 
+                             <p className={style.latest_spending_transactions_item_name}>{item.name}</p>
                             <div className={style.latest_spending_transactions_item_content}>
                               <AmountText amount={item.amount} size={"xs"}/>
                               <MutedText text={formatDate(item.date)}/>

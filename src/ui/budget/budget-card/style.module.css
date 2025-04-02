@@ -92,3 +92,20 @@
     gap: 4px;
 }
 
+@media(min-width:767px){
+    .budget_card{
+       padding:var(--spacing_400);
+       margin:var(--spacing_300) 0;
+    } 
+}
+
+@media(min-width:1200px){
+    .budget_card{
+       padding:var(--spacing_400);
+       margin:1.5rem 0;
+    } 
+    .budget_card:first-child{
+        margin: 0;
+    }
+}
+

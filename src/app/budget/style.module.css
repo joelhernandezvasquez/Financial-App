@@ -5,6 +5,11 @@
     margin-bottom:var(--spacing_400);
 }
 
+.budget_grid_main{
+    display:grid;
+    grid-template-columns: 1fr;
+}
+
 .budget_container{
     display:flex;
     flex-direction: column;
@@ -15,4 +20,37 @@
 }
 .spending_summary_item{
     margin-top:1.5rem;
+}
+
+@media(min-width:767px){
+    .budget_container{
+     flex-direction: row;
+     padding:var(--spacing_400);
+    }
+    .budget_container > *{
+        flex:1;
+    }
+    .spending_summary_container{
+        margin-top:2.5rem;
+    }
+}
+
+@media(min-width:1200px){
+
+    .budget_grid_main{
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+        align-items: start;
+        column-gap:var(--spacing_400); 
+    }
+    .budget_container{
+        flex-direction: column;
+        padding:var(--spacing_400);
+    }
+       .budget_container > *{
+        flex:0;
+    }
+    .spending_summary_container{
+        margin-top:0rem;
+    }
 }

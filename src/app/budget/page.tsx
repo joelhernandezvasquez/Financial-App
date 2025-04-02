@@ -19,7 +19,7 @@ return(
          <OpenModalBtn textBtn="Add New Budget"/>
        </header>
      
-       <main>
+       <main className={style.budget_grid_main}>
         <div className={style.budget_container}>
          <BudgetChart chartData={chartData} currentBalance={currentBalance}/>
           
