@@ -4,6 +4,7 @@ import SubTitle from '@/ui/sub-title/SubTitle';
 import LinkButton from '@/ui/link-button/LinkButton';
 import AmountText from '@/ui/amount-text/AmountText';
 import PotsCategory from './pots-category/PotsCategory';
+import MutedText from '@/ui/muted-text/MutedText';
 import style from './style.module.css';
 
 const PotsSummary = async() => {
@@ -25,7 +26,7 @@ const PotsSummary = async() => {
          alt={''}
         />
         <div className={style.total_save_box_amount}>
-          <p className={style.total_save_box_amount_text}>Total Saved</p>
+          <MutedText text='Total Saved' size='sm'/>
           <AmountText amount={850} size='lg'/>
         </div>
       </div>

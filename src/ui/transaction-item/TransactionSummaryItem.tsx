@@ -2,6 +2,7 @@ import Avatar from "@/ui/avatar/Avatar";
 import TransactionAmount from "@/ui/transaction-amount/TransactionAmount";
 import { Transaction } from "@/lib/definitions"
 import { formatDate } from "@/lib/utils";
+import MutedText from "../muted-text/MutedText";
 import style from './style.module.css';
 
 interface Props{
@@ -24,7 +25,7 @@ const TransactionSummaryItem = ({transaction,showTransactionCategory}:Props) => 
 
         <div className={style.transaction_item_amount_date}>
           <TransactionAmount amount={amount}/>
-          <p className={style.transaction_date}>{dateFormat}</p>
+          <MutedText text={dateFormat}/>
         </div>
     </li>
   )

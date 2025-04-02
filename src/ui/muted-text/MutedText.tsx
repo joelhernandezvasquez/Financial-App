@@ -1,11 +1,12 @@
 import style from './style.module.css';
 
 interface Props{
-    text:string
+    text:string,
+    size?:'xs' | 'sm'
 }
-const MutedText = ({text}:Props) => {
+const MutedText = ({text,size}:Props) => {
   return (
-    <p className={style.muted_text}>{text}</p>
+    <p className={`${style.muted_text} ${style[size!]}`}>{text}</p>
   )
 }
 

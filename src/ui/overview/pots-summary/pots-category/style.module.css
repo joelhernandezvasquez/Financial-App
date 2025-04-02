@@ -14,11 +14,7 @@
     flex-direction: column;
     gap:4px;
 }
-.category_content_text{
-    color:var(--grey_500);
-    font-size: 12px;
-    font-weight: 400;
-}
+
 .category_content_amount{
  color:var(--grey_900);
  font-size: .875rem;

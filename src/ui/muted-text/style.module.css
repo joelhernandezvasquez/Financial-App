@@ -4,3 +4,6 @@
     font-size: .75rem;
     font-weight: 400;
   }
+  .muted_text.sm{
+    font-size: .875rem;
+  }

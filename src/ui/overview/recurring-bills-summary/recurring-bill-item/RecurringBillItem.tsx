@@ -1,6 +1,7 @@
 import { Bill } from "@/lib/definitions";
 import AmountText from "@/ui/amount-text/AmountText";
 import { getBorderTheme } from "@/lib/utils";
+import MutedText from "@/ui/muted-text/MutedText";
 import style from './style.module.css';
 
 interface Props{
@@ -12,7 +13,7 @@ const RecurringBillItem = ({bill}:Props) => {
   
    return (
     <li className={style.bills_item} style={getBorderTheme(theme)}>
-      <p className={style.bills_item_category}>{category}</p>
+      <MutedText text={category} size="sm"/>
       <AmountText amount={amount} size="sm"/>
     </li>
   )
