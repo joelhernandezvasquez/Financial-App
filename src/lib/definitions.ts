@@ -55,3 +55,7 @@ export interface SpendingBudgetSummary {
   spent:number,
   latestSpending:Transaction[]
 }
+
+export type SpendingBudgetSummaryItem = Omit<SpendingBudgetSummary, 'latestSpending'>;
+
+export type SpentBudget = Omit<SpendingBudgetSummary,'latestSpending'|'category'|'id'>;

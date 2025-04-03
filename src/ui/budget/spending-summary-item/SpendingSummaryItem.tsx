@@ -1,15 +1,13 @@
 import AmountText from '@/ui/amount-text/AmountText';
-import style from './style.module.css';
 import { CategoryThemeIndicator } from '@/ui/category-theme-indicator/CategoryThemeIndicator';
-
+import { SpendingBudgetSummaryItem } from '@/lib/definitions';
+import style from './style.module.css';
 interface Props{
- category:string,
- theme:string,
- spent:number,
- maximum:number
+ spendingSummary:SpendingBudgetSummaryItem;
 }
 
-const SpendingSummaryItem = ({category,theme,spent,maximum}:Props) => {
+const SpendingSummaryItem = ({spendingSummary}:Props) => {
+  const {category,theme,spent,maximum} = spendingSummary;
   return (
     <li className={style.summary_item}>
        <div>
@@ -19,11 +17,10 @@ const SpendingSummaryItem = ({category,theme,spent,maximum}:Props) => {
 
        <div>
             <AmountText amount={spent} size='md'/>
-            <p className={style.maximun}>
-              of <AmountText amount={maximum} size='xs' color='muted'/>
-            </p>   
+            <p className={style.maximun}>of </p>   
+            <AmountText amount={maximum} size='xs' color='muted'/>
        </div>
-      
+  
     </li>
   )
 }

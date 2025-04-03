@@ -1,0 +1,10 @@
+.budget_card_content_info_spent_free{
+    display:flex;
+    align-items: center;
+    gap:1rem;
+}
+.budget_card_content_info_spent_free > *{
+    flex:1;
+    display:flex;
+    gap:1rem;
+}
