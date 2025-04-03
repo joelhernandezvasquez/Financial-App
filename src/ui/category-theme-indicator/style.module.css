@@ -1,0 +1,9 @@
+.category_theme{
+    width: 4px;
+    height: 43px;
+    border-radius: .5rem;
+}
+
+.category_theme.sm{
+    height:21px;
+}

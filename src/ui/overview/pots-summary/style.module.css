@@ -23,11 +23,6 @@
     border-radius: 12px;
 }
 
-.total_save_box_amount_text{
-   color:var(--grey_500);
-   font-size: .875rem;
-   font-weight: 400;
-}
 
 .summary_pots_category{
     display:grid;

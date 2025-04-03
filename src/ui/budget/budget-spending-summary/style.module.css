@@ -1,0 +1,15 @@
+.spending_summary_item{
+    margin-top:1.5rem;
+}
+
+@media(min-width:767px){
+    .spending_summary_container{
+        margin-top:2.5rem;
+    }
+}
+
+@media(min-width:1200px){
+    .spending_summary_container{
+        margin-top:0rem;
+    }
+}

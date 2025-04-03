@@ -9,9 +9,3 @@
     background: var(--color-beige-100, #F8F4F0);
     padding:var(--spacing_250) var(--spacing_200);
 }
-
-.bills_item_category{
-    color: var(--grey_500);
-    font-size: .875rem;
-    font-weight: 400;
-}

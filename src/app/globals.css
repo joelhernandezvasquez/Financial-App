@@ -123,6 +123,12 @@ a{
   padding:var(--spacing_300) var(--spacing_200);
 }
 
+.muted_text{
+  color:var(--grey_500);
+  font-size: .75rem;
+  font-weight: 400;
+}
+
 @media(min-width:767px){
   .content_container{
     padding:var(--spacing_400) var(--spacing_500);

@@ -1,0 +1,12 @@
+
+.progress_bar_container{
+    background:var(--grey_100);
+    border-radius: 4px;
+    padding:4px;
+    height:32px;
+}
+
+.inner_progress_bar{
+    height: 24px;
+    border-radius: 4px;
+}

@@ -25,11 +25,6 @@
     font-size: .875rem;
 }
 
-.transaction_date{
-    font-size: .75rem;
-    font-weight: 400;
-    color:var(--grey_500);
-}
 
 .transaction_item:first-child{
     padding-top:0;
