@@ -1,0 +1,10 @@
+.category_theme_elipsis{
+    display:block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+}
+
+.is_disable{
+    opacity: .25;
+}

@@ -5,6 +5,7 @@ const UseClickAway = (closeWindow:()=>void) => {
 
   useEffect(()=>{
     const handleClickOutside = (event:MouseEvent) =>{
+
       if(ref.current && !ref.current.contains(event.target as Node)){
         closeWindow();
       }
