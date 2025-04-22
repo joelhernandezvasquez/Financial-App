@@ -4,16 +4,15 @@ import MutedText from '@/ui/muted-text/MutedText';
 import { budgetCategory} from '@/lib/constants';
 import FormDropdown from '@/ui/form-dropdown/FormDropdown';
 import ThemeDropdown from '@/ui/theme-dropdown/ThemeDropdown';
-import form from '../../../../app/form.module.css';
 import { useThemeColors } from '../../context/ThemeColorsContext';
 import { getAvailableThemeColor } from '@/lib/utils';
+import form from '../../../../app/form.module.css';
 
 const AddNewBudget = () => { 
  const { processedThemeColors } = useThemeColors();
  const [selectedCategory,setSelectCategory] = useState(budgetCategory[0]);
  const [selectedThemeColor,setThemeColor] = useState(getAvailableThemeColor(processedThemeColors));
   
-//  TODO: make responsive and pointer cursor for dropdown and items
  return (
       <>
        <MutedText 
