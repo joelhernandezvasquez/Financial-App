@@ -2,7 +2,6 @@
 import UseToggle from '@/hooks/use-toggle/UseToggle';
 import Modal from '../modal/Modal';
 import AddNewBudget from '../budget/modals/add-new-budget/AddNewBudget';
-import SubTitle from '../sub-title/SubTitle';
 import style from './style.module.css';
 interface Props{
     textBtn:string
@@ -18,7 +17,7 @@ const OpenModalBtn = ({textBtn}:Props) => {
     {isToggle && 
     (<Modal onClose={handleToggle}> 
       <Modal.Title>
-        <SubTitle subTitle={'Add New Budget'}/>
+        <h2 className={style.subtitle}>Add New Budget</h2>
       </Modal.Title>
 
       <Modal.Body>

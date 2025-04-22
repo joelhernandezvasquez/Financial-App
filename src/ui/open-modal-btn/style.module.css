@@ -6,3 +6,15 @@
     padding:1rem;
     font-size: .875rem;
 }
+
+.subtitle{
+    font-size: 1.25rem;
+    color:var(--grey_900);
+    font-weight: 700;
+}
+
+@media(min-width:767px){
+    .subtitle{
+        font-size: 2rem;
+    }
+}

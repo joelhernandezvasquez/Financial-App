@@ -9,10 +9,11 @@ import { useThemeColors } from '../../context/ThemeColorsContext';
 import { getAvailableThemeColor } from '@/lib/utils';
 
 const AddNewBudget = () => { 
-  const { processedThemeColors } = useThemeColors();
+ const { processedThemeColors } = useThemeColors();
  const [selectedCategory,setSelectCategory] = useState(budgetCategory[0]);
  const [selectedThemeColor,setThemeColor] = useState(getAvailableThemeColor(processedThemeColors));
   
+//  TODO: make responsive and pointer cursor for dropdown and items
  return (
       <>
        <MutedText 
@@ -45,7 +46,7 @@ const AddNewBudget = () => {
               callback={setThemeColor}           
             />
          </div>
-
+        <button className={form.submit_btn}>Add Budget</button>
       </form> 
 
       </>
