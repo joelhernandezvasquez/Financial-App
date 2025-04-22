@@ -1,6 +1,7 @@
-import { Budget, BudgetPieData, SpendingBudgetSummary, Transaction } from "./definitions";
+import { Budget, BudgetPieData, SpendingBudgetSummary, ThemeColor, Transaction } from "./definitions";
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
+import { themeColors } from "./constants";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -43,6 +44,21 @@ export const getCurrentBalance = (spendingSummary:SpendingBudgetSummary[]):numbe
   return spendingSummary.reduce((accumulator,currentValue)=>{
     return accumulator + currentValue.spent
   },0)
+}
+
+export const getUsedBudgetColors = (spendingSummary:SpendingBudgetSummary[]):ThemeColor[] =>{
+  const usedColorSet = new Set(spendingSummary.map((s)=> s.theme));
+  
+  return themeColors.map((themeColor)=>{
+    return{
+      ...themeColor,
+      isUsed:usedColorSet.has(themeColor.color)
+    }
+  })
+}
+
+export const getAvailableThemeColor = (themeColors:ThemeColor[]) =>{
+  return themeColors.find((item)=> !item.isUsed);
 }
 
 

@@ -4,19 +4,25 @@ import { BudgetChart } from "@/ui/pie-chart/BudgetChart";
 import BudgetCardContainer from "@/ui/budget/budget-card-container/BudgetCardContainer";
 import BudgetSpendingSummary from "@/ui/budget/budget-spending-summary/BudgetSpendingSummary";
 import { getSpendingSummary } from "@/lib/actions";
-import { getCurrentBalance, mappedChartData } from "@/lib/utils";
+import { getCurrentBalance, getUsedBudgetColors, mappedChartData } from "@/lib/utils";
 import style from './style.module.css';
+import { ThemeColorsProvider } from "@/ui/budget/context/ThemeColorsContext";
 
 export default async function Budget(){
     const spendingSummary = await getSpendingSummary();
     const chartData = mappedChartData(spendingSummary);
     const currentBalance = getCurrentBalance(spendingSummary);
+    const useBudgetColors = getUsedBudgetColors(spendingSummary);
 
     return( 
  <>
        <header className={style.header}>
          <ContentTitle title="budgets"/>
-         <OpenModalBtn textBtn="Add New Budget"/>
+         
+         <ThemeColorsProvider processedThemeColors={useBudgetColors}>
+           <OpenModalBtn textBtn="Add New Budget"/>
+         </ThemeColorsProvider>
+
        </header>
      
        <main className={style.budget_grid_main}>
